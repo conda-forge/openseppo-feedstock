@@ -11,20 +11,19 @@ Summary: Open SEPPO Tools - Supporting Geospatial and Remote Sensing Data Proces
 
 openSEPPO provides open-source tools for processing and managing geospatial
 and SAR remote sensing data, with a focus on NASA NISAR products.
-Includes conversion of NISAR GCOV HDF5 files to Cloud Optimized GeoTIFF (COG),
-Earthdata catalog search, and credential management. The tools scale readily
-with the SEPPO software by Earth Big Data (https://earthbigdata.com/seppo).
+Includes conversion of NISAR GCOV and GSLC HDF5 files to Cloud Optimized GeoTIFF (COG),
+interferometric coherence estimation, Earthdata catalog search, and credential management.
+The tools scale readily with the SEPPO software by Earth Big Data (https://earthbigdata.com/seppo).
 
 
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27638&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openseppo-feedstock?branchName=main">
-      </a>
+      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
     </td>
   </tr>
 </table>
