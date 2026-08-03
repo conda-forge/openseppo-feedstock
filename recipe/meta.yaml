@@ -1,4 +1,4 @@
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/EarthBigData/openSEPPO/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 724b96de1840ccbd4e1b9fc9d3f42750eba6eed26bf571d7156ae269b3e1c660
+  sha256: 605fbba16c2c1519bcc298c6618aa963e65ce98419fe98cf072711c4598bde91
 
 build:
   number: 0
