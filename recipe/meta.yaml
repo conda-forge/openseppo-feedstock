@@ -1,4 +1,4 @@
-{% set version = "0.7.2" %}
+{% set version = "0.8.0" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/EarthBigData/openSEPPO/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 10d05a9bdc503f8cc5f3ddc7a1dfaa812f6ec82e48a57c6f0ac87a068a0c187c
+  sha256: 92babe085e875bed86ca4c8363a8806de79bcb1fe8b2649f85ebf2478db4397b
 
 build:
   number: 0
@@ -19,6 +19,8 @@ build:
     - seppo_nisar_gcov_convert = openseppo.cli.nisar_gcov_convert:main
     - seppo_nisar_gcov_convert_S = openseppo.cli.nisar_gcov_convert_S:main
     - seppo_nisar_gslc_convert = openseppo.cli.nisar_gslc_convert:main
+    - seppo_nisar_gunw_convert = openseppo.cli.nisar_gunw_convert:main
+    - seppo_nisar_sme2_convert = openseppo.cli.nisar_sme2_convert:main
     - seppo_nisar_coherence = openseppo.cli.nisar_coherence:main
     - seppo_nisar_rslc_convert = openseppo.cli.nisar_rslc_convert:main
 
@@ -39,6 +41,7 @@ requirements:
     - xarray >=2023.1
     - scipy >=1.10
     - pyproj >=3.5
+    - matplotlib-base >=3.7
   run_constrained:
     - aria2 >=1.35
 
@@ -54,6 +57,8 @@ test:
     - seppo_nisar_gcov_convert --help
     - seppo_nisar_gcov_convert_S --help
     - seppo_nisar_gslc_convert --help
+    - seppo_nisar_gunw_convert --help
+    - seppo_nisar_sme2_convert --help
     - seppo_nisar_coherence --help
     - seppo_nisar_rslc_convert --help
   requires:
@@ -68,8 +73,8 @@ about:
   description: |
     openSEPPO provides open-source tools for processing and managing geospatial
     and SAR remote sensing data, with a focus on NASA NISAR products.
-    Includes RSLC subsetting (isce3/GAMMA/SEPPO compatible), conversion of NISAR GCOV
-    and GSLC HDF5 files to Cloud Optimized GeoTIFF (COG) or HDF5 subsets,
+    Includes RSLC subsetting (isce3/GAMMA/SEPPO compatible), conversion of NISAR GCOV,
+    GSLC, GUNW and SME2 HDF5 files to Cloud Optimized GeoTIFF (COG) or HDF5 subsets,
     interferometric coherence estimation, Earthdata catalog search, and credential management.
     The tools scale readily with the SEPPO software by Earth Big Data (https://earthbigdata.com/seppo).
 
