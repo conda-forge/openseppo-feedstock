@@ -1,4 +1,4 @@
-{% set version = "0.8.1" %}
+{% set version = "0.9.0" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/EarthBigData/openSEPPO/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: fae3ae102a7613127984ec418d673f533a3115e539e735f1c663eaaae2174f98
+  sha256: e63a4886d1a261217a343b4705218aa49284d53fe76afa73c658c25e6b1c5923
 
 build:
   number: 0
@@ -23,6 +23,7 @@ build:
     - seppo_nisar_sme2_convert = openseppo.cli.nisar_sme2_convert:main
     - seppo_nisar_coherence = openseppo.cli.nisar_coherence:main
     - seppo_nisar_rslc_convert = openseppo.cli.nisar_rslc_convert:main
+    - seppo_wagner7_vector = openseppo.cli.wagner7_vector:main
 
 requirements:
   host:
@@ -42,6 +43,7 @@ requirements:
     - scipy >=1.10
     - pyproj >=3.5
     - matplotlib-base >=3.7
+    - gdal
   run_constrained:
     - aria2 >=1.35
 
@@ -50,6 +52,7 @@ test:
     - openseppo
     - openseppo.nisar
     - openseppo.cli
+    - osgeo.ogr
   commands:
     - pip check
     - seppo_nisar_search --help
@@ -61,6 +64,7 @@ test:
     - seppo_nisar_sme2_convert --help
     - seppo_nisar_coherence --help
     - seppo_nisar_rslc_convert --help
+    - seppo_wagner7_vector --help
   requires:
     - pip
     - python {{ python_min }}
